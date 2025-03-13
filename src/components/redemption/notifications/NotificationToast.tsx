@@ -1,4 +1,3 @@
-// src/components/redemption/notifications/NotificationToast.tsx
 import React, { useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import {
@@ -6,7 +5,7 @@ import {
   NotificationTitle,
   NotificationDescription,
   NotificationClose,
-} from "@/components/redemption/notifications/Notification";
+} from "@/components/ui/notification";
 import { NotificationItem } from "./NotificationCenter";
 
 interface NotificationToastProps {
