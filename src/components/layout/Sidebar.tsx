@@ -4,18 +4,15 @@ import { cn } from "@/lib/utils";
 import {
   BarChart3,
   Users,
-  FileText,
   Layers,
   Settings,
   Home,
   PieChart,
-  Wallet,
-  FileCheck,
-  Shield,
-  Coins,
   ShieldCheck,
   UserRoundCog,
+  Scale,
   WalletCards,
+  FileStack,
 } from "lucide-react";
 
 interface SidebarItemProps {
@@ -50,9 +47,7 @@ const Sidebar = () => {
     <div className="h-full w-64 border-r bg-white p-4 flex flex-col">
       <div className="mb-8 px-2">
         <h2 className="text-xl font-bold">Chain Capital</h2>
-        <p className="text-xs text-muted-foreground">
-          Asset Management Platform
-        </p>
+        <p className="text-xs text-muted-foreground">Tokenization Platform</p>
       </div>
 
       <div className="space-y-1">
@@ -74,12 +69,12 @@ const Sidebar = () => {
 
       <div className="mt-6">
         <h3 className="mb-2 px-3 text-xs font-semibold text-muted-foreground">
-          CAP TABLE
+          OVERVIEW
         </h3>
         <div className="space-y-1">
           <SidebarItem
             icon={<PieChart className="h-4 w-4" />}
-            label="Cap Table Overview"
+            label="Issuance"
             href="/captable"
             active={pathname === "/captable"}
           />
@@ -89,13 +84,12 @@ const Sidebar = () => {
             href="/captable/investors"
             active={pathname === "/captable/investors"}
           />
-			<SidebarItem
-  			  icon={<WalletCards className="h-4 w-4" />}
-  			  label="Redemptions"
-  			  href="/redemption"
-  			  active={pathname.startsWith("/redemption")}
-/>
-          
+          <SidebarItem
+            icon={<WalletCards className="h-4 w-4" />}
+            label="Redemptions"
+            href="/redemption"
+            active={pathname.startsWith("/redemption")}
+          />
         </div>
       </div>
 
@@ -104,20 +98,20 @@ const Sidebar = () => {
           MANAGEMENT
         </h3>
         <div className="space-y-1">
-        	<SidebarItem
-  				icon={<UserRoundCog className="h-4 w-4" />}
-  				label="Role Management"
-  				href="/role-management"
-  				active={pathname.startsWith("/role-management")}
-		  />
-  			<SidebarItem
-    			icon={<ShieldCheck className="h-4 w-4" />}
-    			label="Rule Management"
-    			href="/rule-management"
-    			active={pathname === "/rule-management"}
-  		  />
-  		  <SidebarItem
-            icon={<Shield className="h-4 w-4" />}
+          <SidebarItem
+            icon={<UserRoundCog className="h-4 w-4" />}
+            label="Roles"
+            href="/role-management"
+            active={pathname.startsWith("/role-management")}
+          />
+          <SidebarItem
+            icon={<ShieldCheck className="h-4 w-4" />}
+            label="Rules"
+            href="/rule-management"
+            active={pathname === "/rule-management"}
+          />
+          <SidebarItem
+            icon={<Scale className="h-4 w-4" />}
             label="Compliance"
             href="/captable/compliance"
             active={pathname === "/captable/compliance"}
@@ -129,16 +123,10 @@ const Sidebar = () => {
             active={pathname === "/captable/reports"}
           />
           <SidebarItem
-            icon={<FileText className="h-4 w-4" />}
+            icon={<FileStack className="h-4 w-4" />}
             label="Documents"
             href="/captable/documents"
             active={pathname === "/captable/documents"}
-          />
-          <SidebarItem
-            icon={<Settings className="h-4 w-4" />}
-            label="Settings"
-            href="/settings"
-            active={pathname === "/settings"}
           />
         </div>
       </div>
@@ -146,11 +134,13 @@ const Sidebar = () => {
       <div className="mt-auto pt-4 border-t">
         <div className="flex items-center gap-3 px-3 py-2">
           <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-            <span className="text-xs font-medium text-primary">CC</span>
+            <span className="text-xs font-medium text-primary">NB</span>
           </div>
           <div>
-            <p className="text-sm font-medium">Admin User</p>
-            <p className="text-xs text-muted-foreground">admin@example.com</p>
+            <p className="text-sm font-medium">Neil Batchelor</p>
+            <p className="text-xs text-muted-foreground">
+              neil@chaincapital.xyz
+            </p>
           </div>
         </div>
       </div>

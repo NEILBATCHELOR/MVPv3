@@ -210,9 +210,9 @@ const CapTableDashboard = ({
         <div className="p-6 space-y-6">
           <div className="flex flex-col gap-4">
             <div>
-              <h1 className="text-2xl font-bold">Cap Table Overview</h1>
+              <h1 className="text-2xl font-bold">Issuance Overview</h1>
               <p className="text-muted-foreground">
-                Select a project to view its cap table
+                Select a project to view its details
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
@@ -230,9 +230,7 @@ const CapTableDashboard = ({
       <div className="p-6 space-y-6">
         <div className="flex justify-between items-center">
           <div>
-            <h1 className="text-2xl font-bold">
-              {project?.name || "Project"} Cap Table
-            </h1>
+            <h1 className="text-2xl font-bold">{project?.name || "Project"}</h1>
             <p className="text-muted-foreground">
               Manage investors, subscriptions, and token distributions
             </p>

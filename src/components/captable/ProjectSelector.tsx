@@ -113,7 +113,7 @@ const ProjectSelector = ({
         </SelectContent>
       </Select>
       {!currentProjectId && selectedProjectId && (
-        <Button onClick={handleGoToProject}>View Cap Table</Button>
+        <Button onClick={handleGoToProject}>View Project</Button>
       )}
     </div>
   );

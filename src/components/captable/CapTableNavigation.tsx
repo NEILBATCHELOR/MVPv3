@@ -7,10 +7,9 @@ import {
   FileText,
   Wallet,
   FileCheck,
-  Shield,
-  BarChart3,
-  File,
-  Coins,
+  Blocks,
+  FileSliders,
+  ChevronsRight,
 } from "lucide-react";
 
 const CapTableNavigation = ({ projectId }: { projectId: string }) => {
@@ -24,12 +23,12 @@ const CapTableNavigation = ({ projectId }: { projectId: string }) => {
       href: `/projects/${projectId}/captable`,
     },
     {
-      icon: <Coins className="h-4 w-4" />,
+      icon: <Blocks className="h-4 w-4" />,
       label: "Token Builder",
       href: `/projects/${projectId}/tokens`,
     },
     {
-      icon: <Coins className="h-4 w-4" />,
+      icon: <FileSliders className="h-4 w-4" />,
       label: "Token Administration",
       href: `/projects/${projectId}/token-admin`,
     },
@@ -49,29 +48,14 @@ const CapTableNavigation = ({ projectId }: { projectId: string }) => {
       href: `/projects/${projectId}/captable/allocations`,
     },
     {
-      icon: <Coins className="h-4 w-4" />,
+      icon: <FileCheck className="h-4 w-4" />,
       label: "Token Minting",
       href: `/projects/${projectId}/captable/minting`,
     },
     {
-      icon: <FileCheck className="h-4 w-4" />,
-      label: "Distributions",
+      icon: <ChevronsRight className="h-4 w-4" />,
+      label: "Distribution",
       href: `/projects/${projectId}/captable/distributions`,
-    },
-    {
-      icon: <Shield className="h-4 w-4" />,
-      label: "Compliance",
-      href: `/projects/${projectId}/captable/compliance`,
-    },
-    {
-      icon: <BarChart3 className="h-4 w-4" />,
-      label: "Reports",
-      href: `/projects/${projectId}/captable/reports`,
-    },
-    {
-      icon: <File className="h-4 w-4" />,
-      label: "Documents",
-      href: `/projects/${projectId}/captable/documents`,
     },
   ];
 
