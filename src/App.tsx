@@ -12,7 +12,7 @@ import RuleManagementDashboard from "./components/rules/RuleManagementDashboard"
 import RoleManagementDashboard from "./components/UserManagement/RoleManagementDashboard"; // Import Role Management
 import RedemptionDashboard from "./components/redemption/RedemptionDashboard"; // Import Redemption Management
 
-
+// Import Tempo routes
 import routes from "tempo-routes";
 
 function App() {
@@ -91,10 +91,7 @@ function App() {
             path="/projects/:projectId/captable/minting"
             element={<CapTableManagerNew section="minting" />}
           />
-		  <Route 
-		    path="/redemption" 
-		    element={<RedemptionDashboard />} 
-		  />
+          <Route path="/redemption" element={<RedemptionDashboard />} />
           {/* Other routes */}
           <Route
             path="/rule-management"

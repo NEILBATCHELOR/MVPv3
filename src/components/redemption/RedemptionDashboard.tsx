@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import DashboardHeader from "@/components/redemption/dashboard/DashboardHeader";
 import RedemptionSummary from "@/components/redemption/dashboard/RedemptionSummary";
 import RedemptionRequestList from "@/components/redemption/dashboard/RedemptionRequestList";
-import InvestorDashboard from "@/components/redemption/dashboard/InvestorDashboard";
 import RedemptionForm from "@/components/redemption/RedemptionForm";
 import BulkRedemptionForm from "@/components/redemption/operations/BulkRedemptionForm";
 import StatusTracker from "@/components/redemption/StatusTracker";
@@ -32,13 +31,15 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import InvestorDashboard from "@/components/redemption/InvestorDashboard";
+import InvestorDashboard from "@/components/redemption/dashboard/InvestorDashboard";
 import OperationsDashboard from "@/components/redemption/operations/OperationsDashboard";
 import RoleSelection from "@/components/redemption/RoleSelection";
 
 const RedemptionDashboard = () => {
   const [isNewRequestOpen, setIsNewRequestOpen] = useState(false);
-  const [selectedRequestId, setSelectedRequestId] = useState<string | null>(null);
+  const [selectedRequestId, setSelectedRequestId] = useState<string | null>(
+    null,
+  );
   const [currentView, setCurrentView] = useState<
     | "dashboard"
     | "details"
@@ -68,18 +69,28 @@ const RedemptionDashboard = () => {
         onDismiss={dismissNotification}
       />
       <main className="container mx-auto px-4 py-8">
-        {currentView === "role-selection" && <RoleSelection setCurrentView={setCurrentView} />}
+        {currentView === "role-selection" && (
+          <RoleSelection setCurrentView={setCurrentView} />
+        )}
         {currentView === "investor-dashboard" && <InvestorDashboard />}
         {currentView === "operations-dashboard" && <OperationsDashboard />}
-        
+
         {currentView === "dashboard" && (
           <>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
               <div>
-                <h1 className="text-3xl font-bold text-gray-900">Redemption Dashboard</h1>
-                <p className="text-gray-600 mt-1">Manage your token redemption requests and track their status</p>
+                <h1 className="text-3xl font-bold text-gray-900">
+                  Redemption Dashboard
+                </h1>
+                <p className="text-gray-600 mt-1">
+                  Manage your token redemption requests and track their status
+                </p>
               </div>
-              <Button className="mt-4 md:mt-0" size="lg" onClick={() => setCurrentView("new-request")}>
+              <Button
+                className="mt-4 md:mt-0"
+                size="lg"
+                onClick={() => setCurrentView("new-request")}
+              >
                 <PlusCircle className="mr-2 h-5 w-5" /> New Redemption Request
               </Button>
             </div>
@@ -95,10 +106,18 @@ const RedemptionDashboard = () => {
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="text-xl font-semibold mb-4">Quick Actions</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  <Button variant="outline" className="justify-start" onClick={() => setCurrentView("calendar")}>
+                  <Button
+                    variant="outline"
+                    className="justify-start"
+                    onClick={() => setCurrentView("calendar")}
+                  >
                     View Redemption Calendar
                   </Button>
-                  <Button variant="outline" className="justify-start" onClick={() => setCurrentView("transaction")}>
+                  <Button
+                    variant="outline"
+                    className="justify-start"
+                    onClick={() => setCurrentView("transaction")}
+                  >
                     View Transaction History
                   </Button>
                 </div>
@@ -108,7 +127,10 @@ const RedemptionDashboard = () => {
         )}
 
         {currentView === "details" && selectedRequestId && (
-          <RedemptionDetails id={selectedRequestId} onBack={() => setCurrentView("dashboard")} />
+          <RedemptionDetails
+            id={selectedRequestId}
+            onBack={() => setCurrentView("dashboard")}
+          />
         )}
 
         {currentView === "calendar" && (
@@ -131,8 +153,14 @@ const RedemptionDashboard = () => {
           </div>
         )}
 
-        {currentView === "notification-settings" && <NotificationSettingsPage onBack={() => setCurrentView("dashboard")} />}
-        {currentView === "approver-portal" && <ApproverPortalPage onBack={() => setCurrentView("dashboard")} />}
+        {currentView === "notification-settings" && (
+          <NotificationSettingsPage
+            onBack={() => setCurrentView("dashboard")}
+          />
+        )}
+        {currentView === "approver-portal" && (
+          <ApproverPortalPage onBack={() => setCurrentView("dashboard")} />
+        )}
       </main>
     </div>
   );

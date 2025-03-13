@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
-import NotificationSettings from "@/components/notifications/NotificationSettings";
-import EmailPreferences from "@/components/notifications/EmailPreferences";
-import NotificationDemo from "@/components/notifications/NotificationDemo";
+import NotificationSettings from "@/components/redemption/notifications/NotificationSettings";
+import EmailPreferences from "@/components/redemption/notifications/EmailPreferences";
+import NotificationDemo from "@/components/redemption/notifications/NotificationDemo";
 
 interface NotificationSettingsPageProps {
   onBack: () => void;

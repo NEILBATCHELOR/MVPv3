@@ -6,7 +6,7 @@ import {
   NotificationTitle,
   NotificationDescription,
   NotificationClose,
-} from "@/components/ui/notification";
+} from "@/components/redemption/notifications/NotificationToast";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {

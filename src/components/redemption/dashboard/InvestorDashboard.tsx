@@ -33,9 +33,9 @@ import {
 } from "lucide-react";
 import { format, addDays } from "date-fns";
 import { Progress } from "@/components/ui/progress";
-import RedemptionForm from "../redemption/RedemptionForm";
-import StatusTracker from "../redemption/StatusTracker";
-import RedemptionCalendar from "../calendar/RedemptionCalendar";
+import RedemptionForm from "@/components/redemption/RedemptionForm";
+import StatusTracker from "@/components/redemption/StatusTracker";
+import RedemptionCalendar from "@/components/redemption/calendar/RedemptionCalendar";
 
 interface InvestorDashboardProps {
   investorId?: string;
